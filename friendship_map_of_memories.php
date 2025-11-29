@@ -332,7 +332,7 @@ document.getElementById('toggleMapBtn').onclick = () => {
         setTimeout(()=>window._leafletMap.invalidateSize(), 200);
     }
 };
-const LOCATIONIQ_API_KEY = "pk.235663a366caa807557a9a233647f569";
+const LOCATIONIQ_API_KEY = "";
 
 function geocodeLocation(location) {
   // Returns a Promise that resolves to [lat, lon] or null
