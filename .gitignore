@@ -1,0 +1,48 @@
+# -----------------
+# OS files
+# -----------------
+.DS_Store
+Thumbs.db
+
+# -----------------
+# IDE / Editors
+# -----------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------
+# Logs
+# -----------------
+*.log
+logs/
+
+# -----------------
+# Environment files
+# -----------------
+.env
+.env.local
+
+# -----------------
+# Node / frontend tools
+# -----------------
+node_modules/
+npm-debug.log*
+
+# -----------------
+# Composer dependencies
+# -----------------
+vendor/
+
+# -----------------
+# Application runtime folders
+# -----------------
+data/
+uploads/
+
+# -----------------
+# Cache / temp
+# -----------------
+.cache/
+tmp/
