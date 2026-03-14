@@ -102,10 +102,14 @@ function getFriendSuggestions($friendshipMatrix, $indexMap, $emails, $startEmail
         list($node, $level) = array_shift($queue);
         if (in_array($node, $visited)) continue;
         $visited[] = $node;
-        if ($level === 2 && !in_array($node, $alreadyFriends)) {
+        
+        // Suggest anyone at level 2 or 3 (friend of friend, etc.)
+        if ($level >= 2 && !in_array($node, $alreadyFriends)) {
             $suggestions[] = $emails[$node];
+            if (count($suggestions) >= 10) break; // Limit suggestions from BFS
         }
-        if ($level < 2) {
+        
+        if ($level < 3) {
             for ($i = 0; $i < count($friendshipMatrix[$node]); $i++) {
                 if ($friendshipMatrix[$node][$i] === 1 && !in_array($i, $visited)) {
                     $queue[] = [$i, $level + 1];
@@ -113,5 +117,16 @@ function getFriendSuggestions($friendshipMatrix, $indexMap, $emails, $startEmail
             }
         }
     }
+    
+    // Fallback: If we have very few suggestions, suggest other users who are not already friends
+    if (count($suggestions) < 5) {
+        foreach ($emails as $index => $email) {
+            if (!in_array($index, $alreadyFriends) && !in_array($email, $suggestions)) {
+                $suggestions[] = $email;
+                if (count($suggestions) >= 5) break; 
+            }
+        }
+    }
+    
     return $suggestions;
 }
