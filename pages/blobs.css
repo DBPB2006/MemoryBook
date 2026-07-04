@@ -1,0 +1,183 @@
+/* blobs.css */
+
+/* Container setup */
+.blobs-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -10;
+    pointer-events: none;
+}
+
+/* Base blob style */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+    mix-blend-mode: multiply;
+    transition: all 1s ease-in-out;
+}
+
+/* Dark mode compatibility or blending enhancement */
+@media (prefers-color-scheme: dark) {
+    .blob {
+        opacity: 0.25;
+        filter: blur(100px);
+    }
+}
+
+/* Animations */
+@keyframes float1 {
+    0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+    33% { transform: translate(100px, 80px) scale(1.15) rotate(120deg); }
+    66% { transform: translate(-50px, 120px) scale(0.85) rotate(240deg); }
+    100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
+}
+
+@keyframes float2 {
+    0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+    50% { transform: translate(-80px, -120px) scale(1.2) rotate(-180deg); }
+    100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+}
+
+@keyframes float3 {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(60px, -60px) scale(0.9); }
+    66% { transform: translate(-100px, 50px) scale(1.1); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes float4 {
+    0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+    50% { transform: translate(120px, -100px) scale(0.8) rotate(180deg); }
+    100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
+}
+
+/* 13 Blobs mapping with varied positions, sizes, colors, and speeds */
+
+/* Pastel Purples / Lavenders */
+.blob1 {
+    width: 450px;
+    height: 450px;
+    top: -10%;
+    left: -10%;
+    background-color: #e0bbe4;
+    animation: float1 25s infinite ease-in-out;
+}
+
+.blob2 {
+    width: 500px;
+    height: 500px;
+    bottom: -15%;
+    right: -10%;
+    background-color: #d291bc;
+    animation: float2 30s infinite ease-in-out;
+}
+
+/* Pastel Pinks */
+.blob3 {
+    width: 350px;
+    height: 350px;
+    top: 30%;
+    right: 5%;
+    background-color: #fec8d8;
+    animation: float3 20s infinite ease-in-out;
+}
+
+.blob4 {
+    width: 400px;
+    height: 400px;
+    bottom: 10%;
+    left: -5%;
+    background-color: #ffdfd3;
+    animation: float4 28s infinite ease-in-out;
+}
+
+/* Pastel Blues */
+.blob5 {
+    width: 300px;
+    height: 300px;
+    top: 15%;
+    left: 40%;
+    background-color: #a2d2ff;
+    animation: float2 22s infinite ease-in-out;
+}
+
+.blob6 {
+    width: 420px;
+    height: 420px;
+    bottom: 20%;
+    right: 35%;
+    background-color: #b3c5ff;
+    animation: float1 27s infinite ease-in-out;
+}
+
+/* Pastel Yellows / Oranges */
+.blob7 {
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 20%;
+    background-color: #fff4e0;
+    animation: float3 18s infinite ease-in-out;
+}
+
+.blob8 {
+    width: 320px;
+    height: 320px;
+    top: -5%;
+    right: 25%;
+    background-color: #ffe5ec;
+    animation: float4 24s infinite ease-in-out;
+}
+
+/* Soft Mint Greens */
+.blob9 {
+    width: 380px;
+    height: 380px;
+    bottom: -5%;
+    left: 30%;
+    background-color: #d4f0f0;
+    animation: float1 26s infinite ease-in-out;
+}
+
+/* Additional supporting accent blobs */
+.blob10 {
+    width: 200px;
+    height: 200px;
+    top: 75%;
+    right: 15%;
+    background-color: #e8dff5;
+    animation: float2 19s infinite ease-in-out;
+}
+
+.blob11 {
+    width: 280px;
+    height: 280px;
+    top: 40%;
+    left: 70%;
+    background-color: #fce1e4;
+    animation: float3 23s infinite ease-in-out;
+}
+
+.blob12 {
+    width: 350px;
+    height: 350px;
+    bottom: 40%;
+    left: 50%;
+    background-color: #e2ece9;
+    animation: float4 29s infinite ease-in-out;
+}
+
+.blob13 {
+    width: 260px;
+    height: 260px;
+    top: 5%;
+    left: 10%;
+    background-color: #f5efff;
+    animation: float1 21s infinite ease-in-out;
+}
